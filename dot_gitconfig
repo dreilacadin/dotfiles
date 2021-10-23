@@ -1,0 +1,7 @@
+[user]
+	name = Drei Lacadin
+	email = 38705944+dreilacadin@users.noreply.github.com
+[pull]
+	ff = only
+[core]
+	autocrlf = input
