@@ -22,8 +22,6 @@ brew "freetype"
 brew "openssl@1.1"
 # Library for command-line editing
 brew "readline"
-# Powerful, clean, object-oriented scripting language
-brew "ruby"
 # High performance, distributed memory object caching system
 brew "memcached"
 # Python dependency management tool
@@ -42,6 +40,8 @@ brew "tree"
 brew "yarn"
 # Vi 'workalike' with many additional features
 brew "vim"
+
+brew "chezmoi"
 
 # Install MacOS Applications
 cask "alfred"
