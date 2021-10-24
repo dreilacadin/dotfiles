@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Installing Vim"
+
 # Installs vim ultimate vimrc for some sweet vim defaults https://github.com/amix/vimrc
 git clone https://github.com/amix/vimrc.git ~/.vim_runtime
 
