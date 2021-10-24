@@ -9,7 +9,7 @@ if [[ $system_type == "Darwin" ]]; then
 
 	# install Homebrew
 	echo "Installing Homebrew"
-	ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 	# Make sure we’re using the latest Homebrew.
 	brew update
