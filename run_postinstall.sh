@@ -22,4 +22,5 @@ fi
 
 if [[ $MACHINE == "Linux" ]]; then
 	echo "this gets called"
+	neofetch
 fi
