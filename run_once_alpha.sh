@@ -40,7 +40,12 @@ if [[ $system_type == "Linux" ]]; then
 	echo "Hello Linux User!"
 	sudo apt update
 
-	# TODO: Update Linux install scripts
+	apt-get update && export DEBIAN_FRONTEND=noninteractive &&
+		apt-get -y install --no-install-recommends vim snapd
+
+	snap install core
+
+	snap install chezmoi --classic
 
 	# Make sure git is installed, not all installations have it by default
 	GIT_VERSION="$(git --version)"
