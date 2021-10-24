@@ -10,6 +10,12 @@ tap "homebrew/services"
 brew "curl"
 # Collection of GNU find, xargs, and locate
 brew "findutils"
+# Install some other useful utilities like `sponge`.
+brew "moreutils"
+# Install GNU `sed` as gsed
+brew "gnu-sed"
+# GNU grep, egrep and fgrep
+brew "grep"
 # Software library to render fonts
 brew "freetype"
 # Cryptography and SSL/TLS Toolkit
@@ -18,8 +24,6 @@ brew "openssl@1.1"
 brew "readline"
 # Powerful, clean, object-oriented scripting language
 brew "ruby"
-# GUI for vim, made for macOS
-brew "macvim", args: ["HEAD"]
 # High performance, distributed memory object caching system
 brew "memcached"
 # Python dependency management tool
@@ -36,6 +40,8 @@ brew "redis", restart_service: true
 brew "tree"
 # JavaScript package manager
 brew "yarn"
+# Vi 'workalike' with many additional features
+brew "vim"
 
 # Install MacOS Applications
 cask "alfred"
