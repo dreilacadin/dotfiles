@@ -21,5 +21,5 @@ if [[ $MACHINE == "Mac" ]]; then
 fi
 
 if [[ $MACHINE == "Linux" ]]; then
-	echo "this gets called"
+	source ~/.zshrc
 fi

@@ -41,21 +41,28 @@ if [[ $system_type == "Linux" ]]; then
 	sudo apt update
 
 	apt-get update && export DEBIAN_FRONTEND=noninteractive &&
-		apt-get -y install --no-install-recommends vim snapd
+		apt-get -y install --no-install-recommends vim
 
-	snap install core
+	# install Homebrew
+	echo "Installing Homebrew"
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-	snap install chezmoi --classic
+	# Make sure we’re using the latest Homebrew.
+	brew update
 
-	# Install neofetch
+	# Upgrade any already-installed formulae.
+	brew upgrade
 
-	echo "deb http://dl.bintray.com/dawidd6/neofetch jessie main" | sudo tee -a /etc/apt/sources.list
+	# Save Homebrew’s installed location.
+	BREW_PREFIX=$(brew --prefix)
 
-	curl -L "https://bintray.com/user/downloadSubjectPublicKey?username=bintray" -o Release-neofetch.key && sudo apt-key add Release-neofetch.key && rm Release-neofetch.key
+	test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
+	test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+	test -r ~/.bash_profile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >>~/.bash_profile
+	echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >>~/.profile
 
-	apt-get update
-
-	apt-get install neofetch
+	# Install Chezmoi via homebrew
+	brew install chezmoi
 
 	# Make sure git is installed, not all installations have it by default
 	GIT_VERSION="$(git --version)"
