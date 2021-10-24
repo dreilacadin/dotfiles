@@ -47,6 +47,16 @@ if [[ $system_type == "Linux" ]]; then
 
 	snap install chezmoi --classic
 
+	# Install neofetch
+
+	echo "deb http://dl.bintray.com/dawidd6/neofetch jessie main" | sudo tee -a /etc/apt/sources.list
+
+	curl -L "https://bintray.com/user/downloadSubjectPublicKey?username=bintray" -o Release-neofetch.key && sudo apt-key add Release-neofetch.key && rm Release-neofetch.key
+
+	apt-get update
+
+	apt-get install neofetch
+
 	# Make sure git is installed, not all installations have it by default
 	GIT_VERSION="$(git --version)"
 	if [ "$GIT_VERSION" != "command not found" ]; then
