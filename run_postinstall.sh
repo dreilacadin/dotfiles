@@ -21,5 +21,5 @@ if [[ $MACHINE == "Mac" ]]; then
 fi
 
 if [[ $MACHINE == "Linux" ]]; then
-	source ~/.zshrc.pre-oh-my-zsh
+	echo "this gets called"
 fi
