@@ -33,22 +33,21 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
 		chmod 700 ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 	fi
+fi
 
-	# Installs Oh my ZSH with Linux
-	if [[ $MACHINE == "Linux" ]]; then
-		sudo apt install zsh -y
-		# Assumes default ZSH installation
-		ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
+# Installs theme and plugins with linux
+if [[ $MACHINE == "Linux" ]]; then
+	# Assumes default ZSH installation
+	ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
 
-		# Install plugins
-		echo "Installing ZSH Plugins"
+	# Install plugins
+	echo "Installing ZSH Plugins"
 
-		# Powerlevel 10k zsh theme
-		git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-		git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-		git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+	# Powerlevel 10k zsh theme
+	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-		# Fix permissions
-		chmod 700 ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-	fi
+	# Fix permissions
+	chmod 700 ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 fi
