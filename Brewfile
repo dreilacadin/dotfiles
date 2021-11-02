@@ -3,6 +3,7 @@ tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
+tap "caskroom/fonts"
 
 # Install Brew Packages:
 
@@ -59,3 +60,8 @@ cask "messenger"
 cask "discord"
 cask "spotify"
 cask "vlc"
+
+# fonts
+cask "font-fira-code"
+cask "font-fira-mono"
+cask "font-fira-sans"
