@@ -41,6 +41,11 @@ brew "yarn"
 # Vi 'workalike' with many additional features
 brew "vim"
 
+# Essentials for pyenv python installs:
+brew "sqlite3"
+brew "xz"
+brew "zlib"
+
 brew "chezmoi"
 
 # Install MacOS Applications
