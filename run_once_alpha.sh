@@ -56,10 +56,8 @@ if [[ $system_type == "Linux" ]]; then
 	# Save Homebrew’s installed location.
 	BREW_PREFIX=$(brew --prefix)
 
-	test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
-	test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-	test -r ~/.bash_profile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >>~/.bash_profile
-	echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >>~/.profile
+	echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>~/.zprofile
+	eval "$(/opt/homebrew/bin/brew shellenv)"
 
 	# Install Chezmoi via homebrew
 	brew install chezmoi
