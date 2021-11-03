@@ -41,6 +41,8 @@ brew "tree"
 brew "yarn"
 # Vi 'workalike' with many additional features
 brew "vim"
+# Manage multiple Node.js versions
+brew "nvm"
 
 # Essentials for pyenv python installs:
 brew "sqlite3"
