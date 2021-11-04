@@ -5,3 +5,4 @@
 	ff = only
 [core]
 	autocrlf = input
+	excludesfile = /Users/dreilacadin/.gitignore
