@@ -43,15 +43,13 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/bzip2/bin:$PATH"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
 
 if [ -x "$(command -v pyenv)" ]; then
+  eval "$(pyenv init --path)"
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenv-init -)"
 fi
 
-export PATH="/usr/local/opt/postgresql@12/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
@@ -69,3 +67,21 @@ alias gen-env='npx gen-env-types .env -e .'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 DISABLE_AUTO_UPDATE="true"
+export PATH="$HOME/.pyenv/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+# export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
+# export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
+export LDFLAGS="-L/opt/homebrew/opt/openssl@1.1/lib -L/opt/homebrew/opt/libpq/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/openssl@1.1/include -I/opt/homebrew/opt/libpq/include"
+export LDFLAGS="-L/opt/homebrew/opt/libpq/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/libpq/lib/pkgconfig"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# For nvm
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
